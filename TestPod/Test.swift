@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Test {
+public class Test {
     public static let helloWorld = "Hello world!"
 }
