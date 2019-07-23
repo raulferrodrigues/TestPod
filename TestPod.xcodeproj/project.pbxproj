@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		3A37430222E25CF300EECA24 /* TestPod.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A37430022E25CF300EECA24 /* TestPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A37430922E25D3500EECA24 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37430822E25D3500EECA24 /* Test.swift */; };
+		E89FE756F90735C1D5BC48CF /* libPods-TestPod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855875836DD21BF0F64420D4 /* libPods-TestPod.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A3742FD22E25CF300EECA24 /* TestPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A37430022E25CF300EECA24 /* TestPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPod.h; sourceTree = "<group>"; };
 		3A37430122E25CF300EECA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A37430822E25D3500EECA24 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		855875836DD21BF0F64420D4 /* libPods-TestPod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD990FB68AF48035E03C0DD8 /* Pods-TestPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPod.debug.xcconfig"; path = "Target Support Files/Pods-TestPod/Pods-TestPod.debug.xcconfig"; sourceTree = "<group>"; };
+		EA07BC6386FA2E9DEF65AA84 /* Pods-TestPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPod.release.xcconfig"; path = "Target Support Files/Pods-TestPod/Pods-TestPod.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89FE756F90735C1D5BC48CF /* libPods-TestPod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +39,8 @@
 			children = (
 				3A3742FF22E25CF300EECA24 /* TestPod */,
 				3A3742FE22E25CF300EECA24 /* Products */,
+				76248632503C38FEB09FBC23 /* Pods */,
+				75CFFBF25E8E2722CD504AB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,8 +57,26 @@
 			children = (
 				3A37430022E25CF300EECA24 /* TestPod.h */,
 				3A37430122E25CF300EECA24 /* Info.plist */,
+				3A37430822E25D3500EECA24 /* Test.swift */,
 			);
 			path = TestPod;
+			sourceTree = "<group>";
+		};
+		75CFFBF25E8E2722CD504AB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				855875836DD21BF0F64420D4 /* libPods-TestPod.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76248632503C38FEB09FBC23 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD990FB68AF48035E03C0DD8 /* Pods-TestPod.debug.xcconfig */,
+				EA07BC6386FA2E9DEF65AA84 /* Pods-TestPod.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +97,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A37430522E25CF300EECA24 /* Build configuration list for PBXNativeTarget "TestPod" */;
 			buildPhases = (
+				B0A4238685087CD5D68E8389 /* [CP] Check Pods Manifest.lock */,
 				3A3742F822E25CF300EECA24 /* Headers */,
 				3A3742F922E25CF300EECA24 /* Sources */,
 				3A3742FA22E25CF300EECA24 /* Frameworks */,
@@ -95,6 +123,7 @@
 				TargetAttributes = {
 					3A3742FC22E25CF300EECA24 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -125,11 +154,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B0A4238685087CD5D68E8389 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestPod-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A3742F922E25CF300EECA24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A37430922E25D3500EECA24 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +315,9 @@
 		};
 		3A37430622E25CF300EECA24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD990FB68AF48035E03C0DD8 /* Pods-TestPod.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -278,6 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AA2019.TestPod;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,7 +343,9 @@
 		};
 		3A37430722E25CF300EECA24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA07BC6386FA2E9DEF65AA84 /* Pods-TestPod.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
